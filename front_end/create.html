@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/landing-page.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Create a new record</h1>
+    <form id="recordForm">
+    	Truck number:
+        </br>
+    	<span style="padding-top: 5px"><input type="text" id="truckNum" name =""></span>
+    </br>
+    	Company name:
+        </br> 
+    	<span style="padding-top: 5px"><input type="text" id="compName" name =""></span>
+    </br>
+    	Bon number: 
+        </br>
+    	<span style="padding-top: 5px"><input type="text" id="bonNum" name =""></span>
+    </br>
+    	Income:
+        </br>
+    	<span style="padding-top: 5px"><input type="text" id="income" name =""></span>
+    </br>
+    	Expenses:
+        </br>
+    	<span style="padding-top: 5px"><input type="text" id="exps" name =""></span>
+	</br>
+    </br>
+		<span style="padding-top: 5px"><button id="submitBtn" type="submit" class="btn btn-default btn-lg">Submit</button></span>
+    </form>
+
+    <script src="js/jquery.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="common.js"></script> 
+</body>
+
+<script type="text/javascript">
+    // $('#submitBtn')..unbind('click').bind('click', function () { 
+    //     var truck_num = $('#truckNum').val();
+    //     alert(truck_num);
+    //     var company = $('#compName').val();
+    //     alert(company);
+    //     var bon_num = $('#bonNum').val();
+    //     alert(bon_num);
+    //     var expenses = $('#exps').val();
+    //     alert(expenses);
+    //     var income = $('#income').val();
+    //     alert(income);
+    //     // var url = "/create?truck_num="+truck_num+"&company='"+company+"'&bon_num="+bon_num+"&expenses="+expenses+"&income="+income;
+    //     // alert(url);
+    //     $.ajax({
+    //         url:"/create?truck_num="+truck_num+"&company='"+company+"'&bon_num="+bon_num+"&expenses="+expenses+"&income="+income, 
+    //         type:'get',
+    //         // data: {truck_num:truck_num,company:company,bon_num:bon_num,expenses:expenses,income:income}
+    //         success: function(response){
+    //             console.log(response);
+    //             // window.location = '/';
+    //         }
+    //     });
+
+    // });  
+
+</script>
