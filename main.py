@@ -94,11 +94,37 @@ def update():
 def view():
 	ids = request.query.get('id')
 	qry = "SELECT * FROM "+config.get('mysql','tabname')+" WHERE id ="+ids
+	print qry
 	cursor.execute(qry)
 	data = cursor.fetchone()
 	print type(data)
 	output = template('front_end/view', id=data[0], truck_num=data[1], income=data[2], bon_num=data[3], company=data[4], expenses=data[5])
+
 	return output
+@route('/getRecord')
+def getRecord():
+	yes = request.query.get('all')
+	if yes == 'yes':
+		qry = "SELECT * FROM "+config.get('mysql','tabname')
+		cursor.execute(qry)
+		data = cursor.fetchall()
+		print type(data)
+		# print data
+		response = [dict([(columns[i], data[j][i]) for i in range(len(columns))]) for j in range(len(data))]
+		print response
+
+	return json.dumps(response)
+
+@route('/del')
+def delete():
+	ids = request.query.get('id')
+	return 'oops'
+
+@route('/viewAll')
+def viewAll():
+	view = template('front_end/all')
+	return view
+
 
 if __name__ == "__main__" :
     run(host=config.get('bottle','host'), port=config.get('bottle','port'), debug=True)

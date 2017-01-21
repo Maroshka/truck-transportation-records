@@ -16,7 +16,8 @@
 
     <!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet">
-
+    <script src="js/jquery.js"></script> 
+     <script src="common.js"></script> 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
@@ -98,14 +99,14 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <li>
-                                        <a href="#" id="new" class=""><i class="fa "></i> <span class="network-name">Create New</span></a>
+                                        <a href="/create?render=yes" id="new" class=""><i class="fa "></i> <span class="network-name">Create New</span></a>
                                     </li>
                                 </div>
                             </div>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <li>
-                                            <a href="#" id="view" class=""><i class="fa "></i> <span class="network-name">View Records</span></a>
+                                            <a href="#" onclick="viewAll()" id="view" class=""><i class="fa "></i> <span class="network-name">View Records</span></a>
                                         </li>
                                     </div>
                                 </div>
@@ -119,8 +120,7 @@
         <!-- /.container -->
 
     </div>
-    <script src="js/jquery.js"></script> 
-     <script src="common.js"></script> 
+
     <!-- /.intro-header -->
 
 </body>

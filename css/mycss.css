@@ -18,3 +18,28 @@ h1,
 h3 {
  	text-align: center;
  }
+
+ .header {
+ 	padding-top: 100px;
+ 	padding-left: 10px;
+ }
+
+ .tabDiv {
+ 	padding-left: 100px;
+ 	margin-right: auto;
+ 	margin-left: auto;
+ }
+
+ .tabcols{
+ 	/*padding-left: 20px;*/
+ 	font-size: 20px;
+ 	padding-right: 55px;
+ }
+
+ .firstRow {
+ 	padding-left: 70px;
+ }
+
+ .colnam{
+ 	font-size: 20px;
+ }

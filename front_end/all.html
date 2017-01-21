@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/landing-page.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="../common.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/mycss.css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href="/" class="header">Home</a>
+    <div>
+        <h1 style="padding-bottom: 50px">Trucks Records</h1>
+        <div class="">
+            <table id="records">
+                <tr>
+                    <td class="col-md-2 colnam">
+                        Truck number
+                    </td>
+                    <td class="col-md-2 colnam">
+                        Company
+                    </td>
+                    <td class="col-md-2 colnam">
+                        Bon number
+                    </td>
+                    <td class="col-md-2 colnam">
+                        Expenses
+                    </td>
+                    <td class="col-md-2 colnam">
+                        Income
+                    </td>
+                    <td class="col-md-2 colnam">
+                        Actions
+                    </td>
+                </tr>   
+            </table>    
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $.ajax({
+            url: "/getRecord?all=yes",
+            type: 'get',
+            success: function(data){
+                // alert(data.responseText);
+                var data = data;
+                // window.location = '/viewAll';
+                // alert('kuku');
+                $.each(JSON.parse(data), function(){
+                    $('#records > tbody:last-child').append("<tr id='"+this.id+"'><td class='col-md-2 firstRow'>"+this.truck_num+"<td><td class='col-md-2'>"+this.company+"<td><td class='col-md-2'>"+this.bon_num+"<td><td class='col-md-2'>"+this.expenses+"<td><td class='col-md-2'>"+this.income+"<td><td class='col-md-2'><a href='/view?id="+this.id+"'>view</a></br><a href='/del?id="+this.id+"'></a><td></tr>");
+                    // alert(this.id);
+                    // $.each(this, function(k, v){
+                    // });
+                });
+                console.log(data)
+        }
+    });
+        }); 
+    </script>
+</body>
