@@ -23,17 +23,20 @@ def ping():
 	return 'pong@%d' %time.time()
 
 @route('/')
+@route('/index')
 def index():
 	output = template('index')
 	return output
 
 @route('/create')
 def create():
+
 	render = request.query.get('render', None)
 	print render 
 	if render != None:
 		view = template('front_end/create')
 		return view
+	response = {'status':200, 'title':'Done!','msg':'Query has been excuted successfully!' }
 	qry = "INSERT INTO "+config.get('mysql','tabname')+" ("
 	c = 0
 	vals = []
@@ -58,14 +61,17 @@ def create():
 		cursor.execute(qry)
 		db.commit()
 	else: 
-		print c
-		return template('front_end/failed', msg="Invalid Query!")
-	return template('front_end/success', msg="Query has been excuted successfully!")
+		response['status'] = 400
+		response['title'] = 'Failed'
+		response['msg'] = 'Invalid Query!'
+		
+	return response
 
-@route('/success')
-def success():
-	# msg = request.query.get('msg')
-	return template('front_end/success', msg="Query has been excuted successfully!")
+@route('/status')
+def status():
+	msg = request.query.get('msg')
+	title= request.query.get('title')
+	return template('front_end/status', msg=msg, title=title)
 
 @route('/update')
 def update():

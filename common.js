@@ -25,10 +25,13 @@ $('#recordForm').submit(function (e) {
 		type:'get',
 		// data: {truck_num:truck_num,company:company,bon_num:bon_num,expenses:expenses,income:income}
 		success: function(response){
-			console.log(response);
-			// window.location = '/front_end/success.html';
+			window.location = '/status?title='+response.title+'&msg='+response.msg;
 		}
 	});
 }
 
 );
+
+function goHome(){
+	window.location='/';
+}

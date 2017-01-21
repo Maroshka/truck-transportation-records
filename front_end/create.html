@@ -10,35 +10,38 @@
     <meta name="author" content="">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/landing-page.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/mycss.css">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1>Create a new record</h1>
-    <form id="recordForm">
-    	Truck number:
+    <legend><h1>Create a new record</h1></legend>
+    <div class="form">
+        <form id="recordForm">
+        	<label for='tnumb'>Truck number:</label>
+            </br>
+        	<span style="padding-top: 5px"><input type="number" id="truckNum" name ="tnumb"></span>
         </br>
-    	<span style="padding-top: 5px"><input type="text" id="truckNum" name =""></span>
-    </br>
-    	Company name:
-        </br> 
-    	<span style="padding-top: 5px"><input type="text" id="compName" name =""></span>
-    </br>
-    	Bon number: 
+        	<label for="comp">Company name:</label>
+            </br> 
+        	<span style="padding-top: 5px"><input type="text" id="compName" name ="comp"></span>
         </br>
-    	<span style="padding-top: 5px"><input type="text" id="bonNum" name =""></span>
-    </br>
-    	Income:
+        	<label for="bon">Bon number: </label>
+            </br>
+        	<span style="padding-top: 5px"><input type="number" id="bonNum" name ="bon"></span>
         </br>
-    	<span style="padding-top: 5px"><input type="text" id="income" name =""></span>
-    </br>
-    	Expenses:
+        	<label for="income">Income:</label>
+            </br>
+        	<span style="padding-top: 5px"><input type="number" id="income" name ="income"></span>
         </br>
-    	<span style="padding-top: 5px"><input type="text" id="exps" name =""></span>
-	</br>
-    </br>
-		<span style="padding-top: 5px"><button id="submitBtn" type="submit" class="btn btn-default btn-lg">Submit</button></span>
-    </form>
+        	<label for="expense">Expenses:</label>
+            </br>
+        	<span style="padding-top: 5px"><input type="text" id="exps" name ="expense"></span>
+    	</br>
+        </br>
+    		<span style="padding-top: 5px"><input id="submitBtn" type="submit" onmouseover="$(this).addClass('btn-styling');" class="btn btn-default btn-lg" value='Submit'></span>
+        </form>
+    </div>
 
     <script src="js/jquery.js"></script>
 
